@@ -9,7 +9,7 @@ object Main {
   }
   
   def run(s: String) = {
-    val path = s"""F:/scala/proyectos/morfeo/resources/scripts/$s"""
+    val path = s"""c:/scala/proyectos/morfeo/resources/scripts/$s"""
     val script = Source.fromFile(path).mkString.toUpperCase
     println(script.mkString)
     

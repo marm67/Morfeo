@@ -34,7 +34,37 @@ class MorfeoParser extends JavaTokenParsers {
   def valor: Parser[String] = """(\w|\*)+""".r
   
   def parseUno(s: String) = {
-    println(parseAll(script, s))
+    val presult = parseAll(script, s)
+    presult match {
+      case Success(r, n) => parseUnoOk(r)
+      case Failure(msg, n) => println(presult)
+      case Error(msg, n) => println(presult)
+    }
+  }
+
+  def parseUnoOk(rs: List[ComandoParser]) = {
+    println(rs)
+    rs foreach { r => r match {
+        case x: CemtParser => validaCemtParser(r.asInstanceOf[CemtParser])
+        case x: CedaParser => validaCedaParser(r.asInstanceOf[CedaParser])
+        case x: SetParser  => validaSetParser(r.asInstanceOf[SetParser])
+      } 
+    }
+  }
+
+  def validaCemtParser(c: CemtParser) = {
+    println(c.toComando)
+
+  }
+
+  def validaCedaParser(c: CedaParser) = {
+    println(c.parametros)
+
+  }
+
+  def validaSetParser(c: SetParser) = {
+    println(c)
+
   }
 
 }
