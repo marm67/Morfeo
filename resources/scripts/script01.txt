@@ -1,0 +1,3 @@
+set entorno(prod)
+cemt inquire loctran(x*) prog(dfhmirs) target(cicsjcoa)
+cemt set loctran(xala) twa(128) target(cicsjcoa)
