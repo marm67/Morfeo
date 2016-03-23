@@ -8,7 +8,8 @@ git add .
 git commit -m "First commit"
 
 # Sets the new remote
-git remote add origin git@github.com:marm67/Morfeo.git
+git remote add origin https://github.com/marm67/s99.git
+	git@github.com:marm67/Morfeo.git
 
 # Verifies the new remote URL
 git remote -v
